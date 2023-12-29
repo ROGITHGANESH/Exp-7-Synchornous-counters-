@@ -89,7 +89,7 @@ begin
 		A[3]=1^A[3];
 end
 endmodule
-
+```
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER
 ## UP COUNTER
 ![image](https://github.com/ROGITHGANESH/Exp-7-Synchornous-counters-/assets/152588322/5ee6a293-3e7b-4891-9e9b-4267ede88281)
