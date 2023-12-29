@@ -46,43 +46,71 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+1.Create module projectname(input ,output) to start the verilog programming.
 
+2.create a if loop condition to increase the count in counter_up function.
+
+3.Similarly, create another loop for the down counter.
+
+4.End the verilog program using keyword endmodule.
+
+5.Get the timing diagram and RTL realization diagram for respective Counters.
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: Rogith ganesh.R
+RegisterNumber:212223100046
+
+## UPCOUNTER:
+module up(clk,A);
+input clk;
+output reg[0:3]A;
+always@(posedge clk)
+begin
+		A[0]=((((A[1])&(A[2]))&A[3])^A[0]);
+		A[1]=(((A[2])&(A[3]))^A[1]);
+		A[2]=((A[3])^A[2]);
+		A[3]=1^A[3];
+end
+endmodule
 
 
+## DOWNCOUNTER:
+module downc(clk,A);
+input clk;
+output reg[0:3]A;
+always@(posedge clk)
+begin
+		A[0]=((((~A[1])&(~A[2]))&(~A[3]))^A[0]);
+		A[1]=(((~A[2])&(~A[3]))^A[1]);
+		A[2]=((~A[3])^A[2]);
+		A[3]=1^A[3];
+end
+endmodule
+
+### RTL LOGIC UP COUNTER AND DOWN COUNTER
+## UP COUNTER
+![image](https://github.com/ROGITHGANESH/Exp-7-Synchornous-counters-/assets/152588322/5ee6a293-3e7b-4891-9e9b-4267ede88281)
+## DOWN COUNTER:
+![image](https://github.com/ROGITHGANESH/Exp-7-Synchornous-counters-/assets/152588322/7a880b0d-4bc5-453e-a1c0-5f772af16493)
+
+## TIMING DIAGRAM
+UP COUNTER:
+![image](https://github.com/ROGITHGANESH/Exp-7-Synchornous-counters-/assets/152588322/a00c95af-3b2d-43df-9823-ab05b13df1a6)
+## DOWN COUNTER
+![image](https://github.com/ROGITHGANESH/Exp-7-Synchornous-counters-/assets/152588322/b78c40c0-22a5-4965-bd65-cf713fe62e3e)
 
 
+### TRUTH TABLE
+
+## UP COUNTER
+![image](https://github.com/ROGITHGANESH/Exp-7-Synchornous-counters-/assets/152588322/0aa5e898-943b-4057-aca7-46e256147059)
+
+## DOWN COUNTER
+![image](https://github.com/ROGITHGANESH/Exp-7-Synchornous-counters-/assets/152588322/8d2a0ad6-82b5-4941-815b-619b4d903b94)
 
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
-### RESULTS 
+### RESULTS
+This experiment synchronous counter runned successfully.
